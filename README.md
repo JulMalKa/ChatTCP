@@ -1,37 +1,42 @@
 # Java Chat App
 
-Wieloosobowy czat działający w architekturze klient-serwer przez TCP. Serwer obsługuje wielu klientów równolegle dzięki wątkom, a klienci mogą rozmawiać publicznie lub wysyłać prywatne wiadomości.
+A multi-user chat application built on a client-server architecture over TCP. The server handles multiple clients simultaneously using threads, and clients can chat publicly or send private messages.
 
-## Uruchomienie
+## Getting Started
 
-**1. Skompiluj pliki:**
+**1. Compile the files:**
 ```bash
 javac ChatServer.java ChatClient.java
 ```
 
-**2. Uruchom serwer:**
+**2. Start the server:**
 ```bash
 java ChatServer
 ```
 
-**3. Uruchom klienta (w osobnym terminalu):**
+**3. Start a client (in a separate terminal):**
 ```bash
 java ChatClient
 ```
-## Komendy
 
-| Komenda | Opis |
+You can run multiple clients at the same time by opening additional terminals and repeating step 3.
+
+In IntelliJ: Edit Configurations → ChatClient → check **Allow multiple instances**.
+
+## Commands
+
+| Command | Description |
 |---|---|
-| `/list` | Lista aktualnie połączonych użytkowników |
-| `/msg <user> <text>` | Wyślij prywatną wiadomość do użytkownika |
-| `/all <text>` | Wyślij wiadomość do wszystkich |
-| `/quit` | Rozłącz się z serwera |
-| `/help` | Wyświetl listę komend |
+| `/list` | Show all currently connected users |
+| `/msg <user> <text>` | Send a private message to a user |
+| `/all <text>` | Send a message to everyone |
+| `/quit` | Disconnect from the server |
+| `/help` | Display the list of commands |
 
-## Struktura projektu
+## Project Structure
 
 ```
-ChatServer.java   # Serwer – nasłuchuje na porcie 12345, zarządza klientami
-ChatClient.java   # Klient – łączy się z serwerem, wysyła i odbiera wiadomości
+ChatServer.java   # Server – listens on port 12345, manages connected clients
+ChatClient.java   # Client – connects to the server, sends and receives messages
 ```
 
